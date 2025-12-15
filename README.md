@@ -25,18 +25,42 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 
 **Procedure**
 
-/* write all the steps invloved */
+Connect Vcc and GND to the shift register IC.
+
+Apply serial data input to the input pin.
+
+Provide clock pulses to the clock input.
+
+Observe the serial output after each clock pulse.
+
+Verify that data shifts one bit per clock pulse.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
+module exp10(clk, sin, q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
+```
 
-Developed by: RegisterNumber:
+Developed by: Sangeeth J RegisterNumber: 25016967
 
-*/
 
 **RTL LOGIC FOR SISO Shift Register**
+![alt text](<Screenshot 2025-12-15 135158.png>)
 
 **TIMING DIGRAMS FOR SISO Shift Register**
+![alt text](<Screenshot 2025-12-15 135651.png>)
 
 **RESULTS**
+Thus the SERIAL-IN-SERIAL-OUT-SHIFTREGISTER circuit is designed and the truth tables is verified using Quartus software.
